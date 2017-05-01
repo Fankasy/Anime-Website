@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+		<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- one of the properties available; the maximum file size in bytes -->
+		<property name="maxUploadSize" value="5000000" />
+	</bean>
+	<bean id="userValidator" class="com.shaofan.spring.validator.UserValidator"></bean>
+	<bean id="actualPersonValidator" class="com.shaofan.spring.validator.ActualPersonValidator"></bean>
+	<bean id="virtualPersonValidator" class="com.shaofan.spring.validator.VirtualPersonValidator"></bean>
+	<bean id="animeValidator" class="com.shaofan.spring.validator.AnimeValidator"></bean>
+	<bean id="groupValidator" class="com.shaofan.spring.validator.GroupValidator"></bean>
+	<bean id="postValidator" class="com.shaofan.spring.validator.PostValidator"></bean>
+	
+	<bean id="userDao" class="com.shaofan.spring.dao.UserDAO" ></bean>
+	<bean id="roleDao" class="com.shaofan.spring.dao.RoleDAO"></bean>
+	<bean id="animeDao" class="com.shaofan.spring.dao.AnimeDAO"></bean>
+	<bean id="actualPersonDao" class="com.shaofan.spring.dao.ActualPersonDAO"></bean>
+	<bean id="commentDao" class="com.shaofan.spring.dao.CommentDAO"></bean>
+	<bean id="groupDao" class="com.shaofan.spring.dao.GroupDAO"></bean>
+	<bean id="userRateDao" class="com.shaofan.spring.dao.UserRateDAO"></bean>
+	<bean id="virtualPersonDao" class="com.shaofan.spring.dao.VirtualPersonDAO"></bean>
+	<bean id="postDao" class="com.shaofan.spring.dao.PostDAO"></bean>
+	
+</beans>
